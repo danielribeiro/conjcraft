@@ -68,7 +68,7 @@
     ))
 
 (defn github-block []
-  (let [block (create-block "Github Block" "/16github.png")]
+  (let [block (create-block "Github Block" "/16_github.png")]
     block
 ;    (add-recipe (item-stack block 7) ["#" \# (blocks "cobblestone")])
 
