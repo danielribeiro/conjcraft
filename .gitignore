@@ -1,0 +1,12 @@
+/nbproject/
+/.bundle/
+.project
+.settings
+.classpath
+.hg
+
+## EMACS
+*~
+\#*
+.\#*
+
