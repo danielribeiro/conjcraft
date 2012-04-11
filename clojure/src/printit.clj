@@ -47,7 +47,7 @@ public class MinecraftConstants {
   )
 
 (->> [Block Item Material] (mapcat outclass) join class-str
-  (spit "java/MinecraftConstants.java"))
+  (spit "src/java/MinecraftConstants.java"))
 
 ;(doall (map println (mapcat outclass [Block Item])))
 
