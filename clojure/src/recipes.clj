@@ -1,4 +1,4 @@
-(ns minecraftcl)
+(ns clojurecraft)
 
 
 (def char-block (create-input-char-binding

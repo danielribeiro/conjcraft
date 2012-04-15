@@ -1,8 +1,9 @@
-(ns minecraftcl)
+(ns clojurecraft)
 
 (import clojure.lang.Reflector)
 (import java.io.File)
 
+; Reflection helpers
 (defn inst [clas & args]
   (Reflector/invokeConstructor clas (to-array args)))
 
@@ -10,6 +11,7 @@
   (Reflector/invokeStaticMethod target (str method)
     (to-array args)))
 
+; Core helpers
 (defn load-sibling
   "Load a clojure file that is on the same folder as this"
   [filename]
@@ -24,6 +26,7 @@
   "Reverse the keys/values of a map"
   [m] (into {} (map (fn [[k v]] [v k]) m)))
 
+; The state
 (def Block)
 (def ItemStack)
 (def ModLoader)
@@ -31,8 +34,8 @@
 (def items)
 (def materials)
 (def cur-block-id 180)
-(defn intg [x] (Integer. x))
 
+; Wrapping the reflection calls into more frindly functions
 (defn add-recipe [stack array]
   (callit ModLoader 'addRecipe stack (to-array array)))
 
@@ -44,6 +47,7 @@
 
 (defn item-stack [block n] (inst ItemStack block n))
 
+(defn intg [x] (Integer. x))
 (defn create-block
   "Example of how to a basic block in clojure."
   [name texturefile]
@@ -63,6 +67,7 @@
     (def cur-block-id (inc cur-block-id))
     block))
 
+; Function loaded from java, and other modules.
 (load-sibling :minecraft_base)
 (load-sibling :recipes)
 

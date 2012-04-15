@@ -1,4 +1,4 @@
-(ns minecraftcl
+(ns clojurecraft
   (:use clojure.test))
 
 
@@ -104,4 +104,4 @@
       '(d diamond
         s sand))))
 
-(run-tests 'minecraftcl)
+(run-tests 'clojurecraft)
