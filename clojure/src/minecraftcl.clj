@@ -10,10 +10,19 @@
   (Reflector/invokeStaticMethod target (str method)
     (to-array args)))
 
+(defn load-sibling
+  "Load a clojure file that is on the same folder as this"
+  [filename]
+  (load-file
+    (.getAbsolutePath (File. (-> *file* File. .getParent) (str (name filename) ".clj")))))
 
 (defn mapit
   "Convert java hashmap into a clojure hashmap"
   [hashmap] (into {} hashmap))
+
+(defn reverse-map
+  "Reverse the keys/values of a map"
+  [m] (into {} (map (fn [[k v]] [v k]) m)))
 
 (def Block)
 (def ItemStack)
@@ -33,18 +42,11 @@
 (defn name-block [block name]
   (callit ModLoader 'addName block name))
 
-(defn item-stack [block n]
-  (inst ItemStack block n))
+(defn item-stack [block n] (inst ItemStack block n))
 
-(defn recipe [blocks items materials]
-  (let [dirt (blocks "dirt")]
-    (add-recipe (item-stack dirt 7) ["#" \# dirt])))
-
-
-(load-file
-  (.getAbsolutePath (File. (-> *file* File. .getParent) "minecraft_base.clj")))
-
-(defn create-block [name texturefile]
+(defn create-block
+  "Example of how to a basic block in clojure."
+  [name texturefile]
   (let [droppedfn (constantly (intg cur-block-id))
         quantityfn (constantly (intg 7))
         ;Integer. required: http://dev.clojure.org/jira/browse/CLJ-445
@@ -61,71 +63,17 @@
     (def cur-block-id (inc cur-block-id))
     block))
 
-(defn clojure-block []
-  (let [block (create-block "Clojure Block" "/16_clojure.png")]
-    ;(add-recipe (item-stack block 7) ["#" \# (blocks "dirt")])
-    (add-recipe (item-stack (items "swordDiamond") 1) ["x", "x", "x" \x block])
-    ))
+(load-sibling :minecraft_base)
+(load-sibling :recipes)
 
-(defn github-block []
-  (let [block (create-block "Github Block" "/16_github.png")]
-    block
-    ;    (add-recipe (item-stack block 7) ["#" \# (blocks "cobblestone")])
-
-    ))
-
-
-
-(defn reverse-map
-  "Reverse the keys/values of a map"
-  [m]
-  (into {} (map (fn [[k v]] [v k]) m)))
-
-(def char-block (create-input-char-binding
-                  '(
-                     t dirt
-                     s sand
-                     c cobblestone
-                     a sandStone
-                     o oreCoal
-                     i oreIron
-                     l oreLapis
-                     r oreRedstone
-                     g oreGold
-                     d oreDiamond)))
-(def block-char (reverse-map char-block))
-(def seq-recipe-input '(dirt
-                         sand
-                         cobblestone
-                         sandStone
-                         stone
-                         oreCoal
-                         blockSnow
-                         oreIron
-                         oreLapis
-                         oreRedstone
-                         oreGold
-                         oreDiamond
-                         blockDiamond))
-
-;Error: clojure.lang.Var$Unbound cannot be cast to clojure.lang.DynamicClassLoader
-;    (println (eval `(new ~Block-cls 180 0 ~(materials "sand"))))
 (defn call [jblocks jitems jmaterials Block-cls ItemStack-cls ModLoader-cls]
   (do
     (def Block Block-cls)
     (def ItemStack ItemStack-cls)
     (def ModLoader ModLoader-cls)
-    (def blocks (mapit jblocks))
     (def items (mapit jitems))
     (def materials (mapit jmaterials))
-    (github-block)
-    (clojure-block)
-    (doseq [[in out] (partition 2 1 (map (comp blocks name) seq-recipe-input))]
-      (add-recipe (item-stack out 1) ["x" \x in])
-      )
-    (single-recipe-dsl {\x :dirt}
-      "_x_
-       x_x
-       _x_" :plateDiamond 10
-      )
-    ))
+    (def blocks (assoc (mapit jblocks)
+      "clojure" (create-block "Github Block" "/16_github.png")
+      "github" (create-block "Clojure Block" "/16_clojure.png")))
+    (create-recipes)))

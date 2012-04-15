@@ -1,4 +1,4 @@
-(ns minecraftcl
+(ns minecraftcl ^{:doc "Basic Recipe DSL functions."}
   (:use [clojure.string :only [split-lines trim]]))
 
 
@@ -10,7 +10,7 @@
 (defn create-input-char-binding [symbol-list]
   (let
     [zip-zymbol-list (partition 2 (map name symbol-list))]
-    (reduce (fn [val [k v]] (assoc val (first k) v)) {} zip-zymbol-list)))
+    (into {} (map (fn [[k v]] [(first k) v]) zip-zymbol-list))))
 
 
 (defn get-translations [input-char-binding input]

@@ -21,6 +21,7 @@ cd ../../
 ./decompile.sh
 echo == Minecraft Setup Done ==
 # todo clojure - > modloader/lib on: here
+# todo assets.jar -> lib on: here
 # todo assets -> mods on: install_modlader
 # rename mymod -> clojure_mod.jar
 # rename assets -> clojure_mod_assets
