@@ -75,6 +75,6 @@
     (def items (mapit jitems))
     (def materials (mapit jmaterials))
     (def blocks (assoc (mapit jblocks)
-      "clojure" (create-block "Github Block" "/16_github.png")
-      "github" (create-block "Clojure Block" "/16_clojure.png")))
+      "clojure" (create-block "Clojure Block" "/16_clojure.png")
+      "github" (create-block "Github Block" "/16_github.png")))
     (create-recipes)))

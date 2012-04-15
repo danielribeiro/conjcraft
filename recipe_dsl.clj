@@ -19,13 +19,24 @@
         clean-binding-name (comp get-output-item input-char-binding)]
     (mapcat #(vector % (clean-binding-name %)) clean-charset)))
 
+(defn safe-add-recipe
+  "Like add-recipe, but catches exceptions and gives better error reporting"
+  [stack array]
+  (try (add-recipe stack array)
+    (catch Exception e
+      (do
+        (print "Bad recipe: ")
+        (prn stack array)
+        (.printStackTrace e))))
+  )
+
 (defn single-recipe-dsl
   ([input-char-binding recipe-str output-name output-qty]
     (let [output-item (get-output-item output-name)
           trim-and-space #(-> % trim (clojure.string/replace #"_" " "))
           input (->> recipe-str split-lines (map trim-and-space))
           translations (get-translations input-char-binding input)]
-      (add-recipe (item-stack output-item output-qty) (concat input translations))))
+      (safe-add-recipe (item-stack output-item output-qty) (concat input translations))))
 
   ([input-char-binding recipe-str output-name]
     (single-recipe-dsl input-char-binding recipe-str output-name 1)))
