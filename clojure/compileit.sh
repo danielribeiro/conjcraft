@@ -3,4 +3,4 @@ set -e
 cd ..
 ./recompile.sh
 ./reobfuscate.sh
-zip ~/minecraft/mods/mymod.zip -j reobf/minecraft/*.class
+zip ~/minecraft/mods/clojurecraft.zip -j reobf/minecraft/*.class

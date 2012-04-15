@@ -68,7 +68,7 @@
     block))
 
 ; Function loaded from java, and other modules.
-(load-sibling :minecraft_base)
+(load-sibling :recipe_dsl)
 (load-sibling :recipes)
 
 (defn call [jblocks jitems jmaterials Block-cls ItemStack-cls ModLoader-cls]

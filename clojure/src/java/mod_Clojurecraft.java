@@ -1,13 +1,9 @@
 package net.minecraft.src;
 
+import java.io.File;
 import java.io.IOException;
 
-import clojure.lang.IFn;
-import clojure.lang.RT;
-import clojure.lang.Var;
-
 public class mod_Clojurecraft extends BaseMod {
-	
 
 	@Override
 	public String getVersion() {
@@ -18,8 +14,8 @@ public class mod_Clojurecraft extends BaseMod {
 	public void load() {
 		Thread.currentThread().setContextClassLoader(getClass().getClassLoader());
 		try {
-			//Don't do this: use user home.
-			clojure.lang.Compiler.loadFile("/Users/danielribeiro/minecraft_modding/clojure/src/minecraftcl.clj");
+			File file = new File(new File(System.getProperty("user.home"), "clojurecraft"), "clojurecraft_main.clj");
+			clojure.lang.Compiler.loadFile(file.getAbsolutePath());
 			clojure.lang.RT.var("minecraftcl", "call").invoke(MinecraftConstants.blocks,
 			MinecraftConstants.items, MinecraftConstants.materials, ExtendableBlock.class, ItemStack.class,
 				ModLoader.class);
@@ -27,6 +23,4 @@ public class mod_Clojurecraft extends BaseMod {
 			throw new IllegalStateException(e);
 		}
 	}
-
-
 }
