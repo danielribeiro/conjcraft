@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e 
-modpath=~/minecraft_modding
+modpath=~/conjcraft/minecraft_modding
 minecraft_path="$HOME/Library/Application Support/minecraft"
 mcp_url=http://mcp.ocean-labs.de/files/mcp62.zip
 modloader_url=http://dl.dropbox.com/u/20629262/Latest/ModLoader.zip

@@ -15,6 +15,7 @@ public class mod_Conjcraft extends BaseMod {
 		Thread.currentThread().setContextClassLoader(getClass().getClassLoader());
 		try {
 			File file = new File(new File(System.getProperty("user.home"), "conjcraft"), "conjcraft_main.clj");
+			System.out.println("Loading clojure mod files from " + file.getAbsolutePath());
 			clojure.lang.Compiler.loadFile(file.getAbsolutePath());
 			clojure.lang.RT.var("conjcraft", "call").invoke(MinecraftConstants.blocks,
 			MinecraftConstants.items, MinecraftConstants.materials, ExtendableBlock.class, ItemStack.class,

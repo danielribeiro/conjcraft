@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 set -e
-cp src/java/* ../src/minecraft/net/minecraft/src/
-cd ..
+minecraft_path="$HOME/Library/Application Support/minecraft"
+cp bin/*.jar "$minecraft_path/mods/"
+cp java/* minecraft_modding/src/minecraft/net/minecraft/src/
+cd minecraft_modding
 ./recompile.sh
 ./reobfuscate.sh
-zip ~/minecraft/mods/conjcraft.zip -j reobf/minecraft/*.class
+zip "$minecraft_path/mods/conjcraft.zip" -j reobf/minecraft/*.class
+

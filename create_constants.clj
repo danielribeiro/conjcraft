@@ -38,4 +38,4 @@ public class MinecraftConstants {
   }" inner-block))
 
 (->> [Block Item Material] (mapcat outclass) join class-str
-  (spit "src/java/MinecraftConstants.java"))
+  (spit "java/MinecraftConstants.java"))
