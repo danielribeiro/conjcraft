@@ -1,4 +1,4 @@
-(ns clojurecraft)
+(ns conjcraft)
 
 (import clojure.lang.Reflector)
 (import java.io.File)

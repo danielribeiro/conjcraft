@@ -1,4 +1,4 @@
-(ns clojurecraft)
+(ns conjcraft)
 
 (def seq-recipe-input '(dirt
                          sand

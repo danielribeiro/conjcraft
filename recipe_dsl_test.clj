@@ -1,4 +1,4 @@
-(ns clojurecraft
+(ns conjcraft
   (:use clojure.test))
 
 
@@ -105,4 +105,4 @@
       '(d diamond
         s sand))))
 
-(run-tests 'clojurecraft)
+(run-tests 'conjcraft)

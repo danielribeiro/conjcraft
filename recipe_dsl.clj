@@ -1,4 +1,4 @@
-(ns clojurecraft ^{:doc "Basic Recipe DSL functions."}
+(ns conjcraft ^{:doc "Basic Recipe DSL functions."}
   (:use [clojure.string :only [split-lines trim]]))
 
 
