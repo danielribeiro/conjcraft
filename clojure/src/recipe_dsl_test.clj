@@ -3,7 +3,7 @@
 
 
 (defn identity-map [& list] (zipmap list list))
-(def item-map (identity-map "swordDiamond" "iron"))
+(def item-map (identity-map "swordDiamond" "iron" "stick"))
 (def block-map (identity-map "dirt" "iron"))
 
 ;; Mocks for add-recipe
@@ -89,9 +89,19 @@
 
 (deftest get-translations-output-minecraft-translation-array
   (same [\# {:block "dirt"}]
-    (get-translations {\# :dirt} ["#", "##", "#"])
-    )
-  )
+    (get-translations {\# :dirt} ["#", "##", "#"])))
 
+
+(deftest get-translations-output-minecraft-translation-array-of-items-too
+  (same [\# {:item "stick"}]
+    (get-translations {\# :stick} ["#", "##", "#"])))
+
+
+(deftest crating-char-bindings-from-mere-symbols
+  (same {\d "diamond"
+         \s "sand"}
+    (create-input-char-binding
+      '(d diamond
+        s sand))))
 
 (run-tests 'minecraftcl)

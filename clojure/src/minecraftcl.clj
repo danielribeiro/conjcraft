@@ -70,31 +70,29 @@
 (defn github-block []
   (let [block (create-block "Github Block" "/16_github.png")]
     block
-;    (add-recipe (item-stack block 7) ["#" \# (blocks "cobblestone")])
+    ;    (add-recipe (item-stack block 7) ["#" \# (blocks "cobblestone")])
 
     ))
 
 
-(defn create-block-chars []
-  (let [input '(t dirt
-                 s sand
-                 c cobblestone
-                 a sandStone
-                 o oreCoal
-                 i oreIron
-                 l oreLapis
-                 r oreRedstone
-                 g oreGold
-                 d oreDiamond)]
-    (reduce (fn [val [k v]] (assoc val (->> k name first) (name v))) {} (partition 2 input))
-    )
-  )
+
 (defn reverse-map
   "Reverse the keys/values of a map"
   [m]
   (into {} (map (fn [[k v]] [v k]) m)))
 
-(def char-block (create-block-chars))
+(def char-block (create-input-char-binding
+                  '(
+                     t dirt
+                     s sand
+                     c cobblestone
+                     a sandStone
+                     o oreCoal
+                     i oreIron
+                     l oreLapis
+                     r oreRedstone
+                     g oreGold
+                     d oreDiamond)))
 (def block-char (reverse-map char-block))
 (def seq-recipe-input '(dirt
                          sand
@@ -122,8 +120,8 @@
     (def materials (mapit jmaterials))
     (github-block)
     (clojure-block)
-    (doseq [[in out] (partition 2 1 seq-recipe-input)]
-      (add-recipe (item-stack (->> out name blocks) 1) ["x" \x (->> in name blocks)])
+    (doseq [[in out] (partition 2 1 (map (comp blocks name) seq-recipe-input))]
+      (add-recipe (item-stack out 1) ["x" \x in])
       )
     (single-recipe-dsl {\x :dirt}
       "_x_
