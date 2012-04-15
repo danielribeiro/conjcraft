@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -e 
+set -e
+echo "Setting up conjcraft's development environment"
 cd ~
 git clone git://github.com/danielribeiro/conjcraft.git
 cd conjcraft

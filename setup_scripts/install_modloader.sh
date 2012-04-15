@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 minecraft_path="$HOME/Library/Application Support/minecraft"
 modloader_url=http://dl.dropbox.com/u/20629262/Latest/ModLoader.zip
 

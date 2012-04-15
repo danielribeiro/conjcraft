@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e 
 modpath=~/conjcraft/minecraft_modding
 minecraft_path="$HOME/Library/Application Support/minecraft"
 mcp_url=http://mcp.ocean-labs.de/files/mcp62.zip
@@ -10,7 +9,7 @@ mkdir -p $modpath
 cd $modpath
 wget $mcp_url
 unzip mcp62.zip
-cp -rf "$minecraft_path/bin" "$minecraft_path/resources" jars
+cp -rf "$minecraft_path/bin" "$minecraft_path/resources/jars"
 cd  jars
 wget $modloader_url
 unzip ModLoader.zip -d modloader
