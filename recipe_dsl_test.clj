@@ -17,7 +17,8 @@
   (if (block-map block)
     {:block (block-map block)}
     nil))
-(require 'minecraft_base)
+
+(require 'recipe_dsl)
 
 
 (defn same [x y] (is (= x y)))
