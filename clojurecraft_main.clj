@@ -3,8 +3,6 @@
 (import clojure.lang.Reflector)
 (import java.io.File)
 
-(prn "here here!")
-
 ; Reflection helpers
 (defn inst [clas & args]
   (Reflector/invokeConstructor clas (to-array args)))
