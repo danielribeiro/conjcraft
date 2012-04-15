@@ -19,9 +19,6 @@ jar uf ../bin/minecraft.jar *.class
 zip -d  ../bin/minecraft.jar 'META-INF/*'
 cd ../../
 ./decompile.sh
+cd ..
+cp bin/*.jar minecraft_modding/lib/
 echo == Minecraft Setup Done ==
-# todo clojure - > modloader/lib on: here
-# todo assets.jar -> lib on: here
-# todo assets -> mods on: install_modlader
-# rename mymod -> clojure_mod.jar
-# rename assets -> clojure_mod_assets
