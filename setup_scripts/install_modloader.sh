@@ -2,6 +2,7 @@
 minecraft_path="$HOME/Library/Application Support/minecraft"
 modloader_url=http://dl.dropbox.com/u/20629262/Latest/ModLoader.zip
 
+echo "-> Installing modloader"
 cd "$minecraft_path"
 wget $modloader_url
 unzip ModLoader.zip -d modloader
