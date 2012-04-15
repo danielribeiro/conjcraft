@@ -10,7 +10,7 @@ mkdir -p $modpath
 cd $modpath
 wget $mcp_url
 unzip mcp62.zip
-cp -rf "$minecraft_path/bin" "$minecraft_path/resources/jars"
+cp -rf "$minecraft_path/bin" "$minecraft_path/resources" jars
 cd  jars
 wget $modloader_url
 unzip ModLoader.zip -d modloader
@@ -18,7 +18,7 @@ cd modloader
 jar uf ../bin/minecraft.jar *.class
 zip -d  ../bin/minecraft.jar 'META-INF/*'
 cd ../../
-yes Yes |./updatemcp.sh
+yes Yes | ./updatemcp.sh
 ./decompile.sh
 cd ..
 cp bin/*.jar minecraft_modding/lib/
