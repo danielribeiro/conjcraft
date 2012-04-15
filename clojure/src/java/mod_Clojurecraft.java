@@ -6,7 +6,7 @@ import clojure.lang.IFn;
 import clojure.lang.RT;
 import clojure.lang.Var;
 
-public class mod_Main extends BaseMod {
+public class mod_Clojurecraft extends BaseMod {
 	
 
 	@Override
