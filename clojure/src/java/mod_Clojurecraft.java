@@ -16,7 +16,7 @@ public class mod_Clojurecraft extends BaseMod {
 		try {
 			File file = new File(new File(System.getProperty("user.home"), "clojurecraft"), "clojurecraft_main.clj");
 			clojure.lang.Compiler.loadFile(file.getAbsolutePath());
-			clojure.lang.RT.var("minecraftcl", "call").invoke(MinecraftConstants.blocks,
+			clojure.lang.RT.var("clojurecraft", "call").invoke(MinecraftConstants.blocks,
 			MinecraftConstants.items, MinecraftConstants.materials, ExtendableBlock.class, ItemStack.class,
 				ModLoader.class);
 		} catch (IOException e) {
