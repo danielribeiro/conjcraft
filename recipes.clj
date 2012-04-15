@@ -46,6 +46,5 @@
 (defn create-recipes []
   (do
     (block-sequence-recipe)
-    (prn "now loading recipes")
     (recipes)
     ))

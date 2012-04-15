@@ -77,7 +77,4 @@
     (def blocks (assoc (mapit jblocks)
       "clojure" (create-block "Github Block" "/16_github.png")
       "github" (create-block "Clojure Block" "/16_clojure.png")))
-    (prn (blocks "clojure"))
-    (prn (get-output-item "clojure"))
-    (prn (get-output-item 'clojure))
     (create-recipes)))
