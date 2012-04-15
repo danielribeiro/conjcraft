@@ -7,4 +7,3 @@ cd minecraft_modding
 ./recompile.sh
 ./reobfuscate.sh
 zip "$minecraft_path/mods/conjcraft.zip" -j reobf/minecraft/*.class
-
