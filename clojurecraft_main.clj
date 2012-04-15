@@ -22,10 +22,6 @@
   "Convert java hashmap into a clojure hashmap"
   [hashmap] (into {} hashmap))
 
-(defn reverse-map
-  "Reverse the keys/values of a map"
-  [m] (into {} (map (fn [[k v]] [v k]) m)))
-
 ; The state
 (def Block)
 (def ItemStack)
@@ -81,4 +77,7 @@
     (def blocks (assoc (mapit jblocks)
       "clojure" (create-block "Github Block" "/16_github.png")
       "github" (create-block "Clojure Block" "/16_clojure.png")))
+    (prn (blocks "clojure"))
+    (prn (get-output-item "clojure"))
+    (prn (get-output-item 'clojure))
     (create-recipes)))

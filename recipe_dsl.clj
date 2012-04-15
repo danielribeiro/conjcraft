@@ -30,7 +30,9 @@
   ([input-char-binding recipe-str output-name]
     (single-recipe-dsl input-char-binding recipe-str output-name 1)))
 
+(defn non-lazy-map [f coll] (doall (map f coll)))
+
 (defn recipe-dsl [input-char-binding & single-recipes]
   (let [recipe-partitions (->> (partition-by string? single-recipes) (partition 2))
         recipe-args (map #(concat (first %) (second %)) recipe-partitions)]
-    (map (partial apply single-recipe-dsl input-char-binding) recipe-args)))
+    (non-lazy-map (partial apply single-recipe-dsl input-char-binding) recipe-args)))
