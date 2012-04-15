@@ -3,7 +3,7 @@ package net.minecraft.src;
 import java.io.File;
 import java.io.IOException;
 
-public class mod_Clojurecraft extends BaseMod {
+public class mod_Conjcraft extends BaseMod {
 
 	@Override
 	public String getVersion() {
