@@ -13,3 +13,5 @@ unzip conjcraft-0.1.zip
 mv conjcraft-0.1.zip conjcraft-0.1.zip.bak
 cd conjcraft
 cp *.jar *.zip "$minecraft_path/mods/"
+
+echo == Conjcraft installed! == 
