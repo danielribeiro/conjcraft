@@ -68,6 +68,10 @@ Why all these scripts?
 
 - According to terms of license and use of [MCP](http://mcp.ocean-labs.de/index.php/MCP_Releases), Minecraft and Modloader, I cannot re-distribute any of their code. The best I can do is distribute scripts that download and install them (with the exception of Minecraft, which is proprietary, commercial and [more than worth its price](http://www.minecraft.net/store)).
 
+Why does Eclipse gives me errors?
+
+- You need to [add clojure-1.3.0.jar to the classpath](http://www.wikihow.com/Add-JARs-to-Project-Build-Paths-in-Eclipse-%28Java%29). MCP's recompile.sh doesn't use eclipse's configuration file, so you only need to do this if you are going to use Eclipse.
+
 
 Meta
 ----
