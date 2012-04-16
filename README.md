@@ -66,7 +66,7 @@ Why it could not de-obfuscate the code?
 
 Why all these scripts?
 
-- According to terms of license and use of [MCP](http://mcp.ocean-labs.de/index.php/MCP_Releases), Minecraft and Modloader, I cannot re-distribute any of their code. The best I can do is distribute scripts that download and install them (with the exception of Minecraft, which is proprietary and commercial).
+- According to terms of license and use of [MCP](http://mcp.ocean-labs.de/index.php/MCP_Releases), Minecraft and Modloader, I cannot re-distribute any of their code. The best I can do is distribute scripts that download and install them (with the exception of Minecraft, which is proprietary, commercial and [more than worth its price](http://www.minecraft.net/store)).
 
 
 Meta
