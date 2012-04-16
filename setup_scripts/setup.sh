@@ -25,6 +25,7 @@ cd ../../
 yes Yes | ./updatemcp.sh
 ./decompile.sh
 cd ..
-cp bin/*.jar minecraft_modding/lib/
 ./create_constants.sh
+cp bin/*.jar minecraft_modding/lib/
+cp java/* minecraft_modding/src/minecraft/net/minecraft/src/
 echo == Minecraft Setup Done ==
