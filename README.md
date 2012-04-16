@@ -7,7 +7,7 @@ It is an open mod, where most of the magic of the mod is done in free files in t
 
 It also implements a simple [DSL](http://www.manning.com/ghosh/) in clojure for [recipes](https://github.com/danielribeiro/conjcraft/blob/master/recipes.clj#L36).
 
-All scripts below assume you are on linux or mac. You can also use them if you use [Cygwin](http://www.cygwin.com/) on Windows, but [Minecraft community has already created a lot of amazing info](http://www.minecraftforum.net/topic/75440-v125-risugamis-mods-everything-updated/) on installing mods on Windows that I'll not try summarize here.
+All scripts below assume you are on Linux or Mac. You can also use them if you use [Cygwin](http://www.cygwin.com/) on Windows, but [Minecraft community has already created a lot of amazing info](http://www.minecraftforum.net/topic/75440-v125-risugamis-mods-everything-updated/) on installing mods on Windows that I'll not try summarize here.
 
 Installing the mod
 ----
@@ -27,7 +27,7 @@ Installing the mod (full developer mode, including MCP)
 ----
 This is not required if you just wanna play with the recipes, as they are all plain text clojure files included in the conjcraft folder installed on your home directory (the above installation creates them).
 
-This setup assumes the setup above, and that you have git installed.
+This setup assumes the setup above, that you have git installed, and that you have all [pre-requisites for MCP](http://mcp.ocean-labs.de/index.php/MCP_Readme):
 
      $ curl https://raw.github.com/danielribeiro/conjcraft/master/setup_scripts/dev_install.sh | bash
 
@@ -55,6 +55,18 @@ To install your changes (java ones, as, by default, clojure changes will be in t
 This requires [ModLoader](http://www.minecraftdl.com/modloader-risugami-downloads/) installed. If you have not it installed, you can do it in one line with:
 
      $ ./setup_scripts/install_modloader.sh
+
+
+FAQ
+----
+
+Why it could not de-obfuscate the code?
+
+- You probably don't have all [pre-requisites for MCP](http://mcp.ocean-labs.de/index.php/MCP_Readme)
+
+Why all these scripts?
+
+- According to terms of license and use of [MCP](http://mcp.ocean-labs.de/index.php/MCP_Releases), Minecraft and Modloader, I cannot re-distribute any of their code. The best I can do is distribute scripts that download and install them (with the exception of Minecraft, which is proprietary and commercial).
 
 
 Meta
