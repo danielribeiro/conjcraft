@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 modpath=~/conjcraft/minecraft_modding
-minecraft_path="$HOME/Library/Application Support/minecraft"
 mcp_url=http://mcp.ocean-labs.de/files/mcp62.zip
 modloader_url=http://dl.dropbox.com/u/20629262/Latest/ModLoader.zip
+if [ 'Linux' = `uname -s` ]
+then minecraft_path="$HOME/.minecraft"
+else  
+  minecraft_path="$HOME/Library/Application Support/minecraft"
+fi
 
 echo "-> Installing and configuring MCP"
 cd ~

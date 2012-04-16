@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 set -e
-minecraft_path="$HOME/Library/Application Support/minecraft"
+if [ 'Linux' = `uname -s` ]
+then minecraft_path="$HOME/.minecraft"
+else  
+  minecraft_path="$HOME/Library/Application Support/minecraft"
+fi
 
-echo "-> Releasing mod"
+echo "-> Releasing mod to your minecraft folder"
 cp bin/*.jar "$minecraft_path/mods/"
 cp java/* minecraft_modding/src/minecraft/net/minecraft/src/
 cd minecraft_modding

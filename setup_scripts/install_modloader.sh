@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
-minecraft_path="$HOME/Library/Application Support/minecraft"
 modloader_url=http://dl.dropbox.com/u/20629262/Latest/ModLoader.zip
+if [ 'Linux' = `uname -s` ]
+then minecraft_path="$HOME/.minecraft"
+else  
+  minecraft_path="$HOME/Library/Application Support/minecraft"
+fi
 
 echo "-> Installing modloader"
 cd "$minecraft_path"
