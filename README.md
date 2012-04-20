@@ -9,6 +9,8 @@ It also implements a simple [DSL](http://www.manning.com/ghosh/) in clojure for 
 
 All scripts below assume you are on Linux or Mac. You can also use them if you use [Cygwin](http://www.cygwin.com/) on Windows, but [Minecraft community has already created a lot of amazing info](http://www.minecraftforum.net/topic/75440-v125-risugamis-mods-everything-updated/) on installing mods on Windows that I'll not try summarize here.
 
+More information on the project [here](http://metaphysicaldeveloper.wordpress.com/2012/04/20/conjcraft-a-minecraft-mod-implemented-in-clojure/).
+
 Installing the mod
 ----
 
