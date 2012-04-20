@@ -7,6 +7,8 @@ Conjcraft is an open source mod for [Minecraft](http://www.minecraft.net/) writt
 Installing the mod
 ----
 
+*Quick Note:* All instructions here assume you have the current latest stable version of Minecraft, which is [1.2.5](http://www.minecraftwiki.net/wiki/Version_history#1.2.5).
+
 This assumes you have basic dev tool setup (specifically wget and curl) and lawfully own a copy of Minecraft.
 
 If you don't have [ModLoader](http://www.minecraftdl.com/modloader-risugami-downloads/) install, you can install it and the mod in one line
