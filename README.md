@@ -3,7 +3,7 @@ Conjcraft
 
 Conjcraft is an open source mod for [Minecraft](http://www.minecraft.net/) written in [Clojure](http://clojure.org/). It uses [ModLoader](http://www.minecraftdl.com/modloader-risugami-downloads/) and [Minecraft Coder Pack](http://mcp.ocean-labs.de/index.php/Main_Page) (aka MCP) (thanks guys!).
 
-It is an open mod, where most of the magic of the mod is done in free files in the ~/clojurecraft folder (or clojurecraft folder inside your java user.home system property, if you are windows). This you can change the mod simply by editing the files inside there.
+It is an open mod, where most of the magic of the mod is done in free files in the ~/clojurecraft folder (or clojurecraft folder inside your java user.home system property, if you are on Windows). This way you can change the mod simply by editing the files inside there.
 
 It also implements a simple [DSL](http://www.manning.com/ghosh/) in clojure for [recipes](https://github.com/danielribeiro/conjcraft/blob/master/recipes.clj#L36).
 
