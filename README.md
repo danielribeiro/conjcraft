@@ -82,7 +82,7 @@ Why does Eclipse gives me errors?
 Meta
 ----
 
-Created by Daniel Ribeiro. Not affiliated with Mojang. Minecraft is a trademark of [Mojang](http://mojang.com/).
+Created by [Daniel Ribeiro](http://metaphysicaldeveloper.wordpress.com/about-me). Not affiliated with Mojang. Minecraft is a trademark of [Mojang](http://mojang.com/).
 
 Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
 
